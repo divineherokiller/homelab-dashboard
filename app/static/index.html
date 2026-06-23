@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homelab Dashboard</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="header__title">
+      <h1 id="dashboard-title">Homelab</h1>
+      <span class="header__summary" id="status-summary" aria-live="polite"></span>
+    </div>
+    <div class="header__search">
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search services and bookmarks…"
+        autocomplete="off"
+        aria-label="Search"
+      >
+    </div>
+  </header>
+
+  <main class="main" id="main">
+    <div id="widget-services" class="widget-mount"></div>
+    <div id="widget-bookmarks" class="widget-mount"></div>
+  </main>
+
+  <footer class="footer">
+    <span id="last-refresh"></span>
+    <button type="button" id="reload-btn" class="btn btn--ghost">Reload config</button>
+  </footer>
+
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>

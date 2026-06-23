@@ -1,0 +1,11 @@
+services:
+  dashboard:
+    build: .
+    container_name: homelab-dashboard
+    restart: unless-stopped
+    # Host networking lets the dashboard reach Pi-local services on 127.0.0.1
+    network_mode: host
+    volumes:
+      - ./config.yaml:/config/config.yaml:ro
+    environment:
+      - CONFIG_PATH=/config/config.yaml
